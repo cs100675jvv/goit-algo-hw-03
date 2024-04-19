@@ -1,11 +1,11 @@
 import re
 def normalize_phone(phone_number):
-    pattern = r"[^0-9]"
-    norm_number = re.split(pattern, phone_number)
+    pattern = r"[^0-9]" #regular expression for any character excerpt digits
+    norm_number = re.split(pattern, phone_number) #remove all characters excerpt digits
     norm_number = ''.join(norm_number)
-    if not norm_number.startswith('38'):
+    if not norm_number.startswith('38'): #check if number not start from 38 - add "38" to start of number
         norm_number = "38" + norm_number
-    norm_number = "+" + norm_number
+    norm_number = "+" + norm_number #add + to start of number
     return norm_number
 
 raw_numbers = [
